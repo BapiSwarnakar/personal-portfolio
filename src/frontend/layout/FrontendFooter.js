@@ -1,13 +1,13 @@
 
 const FrontendFooter = () => {
   return (
-    <footer id="footer" class="footer position-relative light-background">
+    <footer id="footer" className="footer position-relative light-background">
 
-      <div class="container">
-        <div class="copyright text-center ">
-          <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+      <div className="container">
+        <div className="copyright text-center ">
+          <p>© <span>Copyright</span> <strong className="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
         </div>
-        <div class="credits">
+        <div className="credits">
           Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
       </div>
