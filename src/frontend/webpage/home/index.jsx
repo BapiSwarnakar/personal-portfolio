@@ -59,7 +59,11 @@ const Home = () => {
 
                     <div className="row gy-4 justify-content-center">
                         <div className="col-lg-4">
-                            <img src="/assets/img/bapi.png" className="img-fluid" alt="" />
+                            <img src="/assets/img/bapi.png" 
+                            className='img-fluid'
+                            alt="Bapi Swarnakar - Full Stack Developer in West Bengal" 
+                            title="Bapi Swarnakar Profile Photo"
+                            loading="lazy" />
                         </div>
                         <div className="col-lg-8 content">
                             <h2>FullStack Developer</h2>
