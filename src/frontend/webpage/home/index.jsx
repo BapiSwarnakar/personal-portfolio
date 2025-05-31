@@ -9,7 +9,7 @@ const Home = () => {
     useEffect(() => {
         if (typedElement.current) {
             new Typed(typedElement.current, {
-                strings: ['FullStack Developer', 'Designer', 'Freelancer'],
+                strings: ['FullStackDeveloper', 'Designer', 'Freelancer'],
                 loop: true,
                 typeSpeed: 100,
                 backSpeed: 50,
@@ -35,11 +35,10 @@ const Home = () => {
                         <button className="contact-btn">Download CV</button>
                     </p>
                     <div className="social-links text-center d-lg-none">
-                        <Link to="#" className="twitter"><i className="bi bi-twitter-x"></i></Link>
-                        <Link to="#" className="facebook"><i className="bi bi-facebook"></i></Link>
-                        <Link to="#" className="instagram"><i className="bi bi-instagram"></i></Link>
-                        <Link to="#" className="google-plus"><i className="bi bi-skype"></i></Link>
-                        <Link to="#" className="linkedin"><i className="bi bi-linkedin"></i></Link>
+                        <Link to="https://www.facebook.com/share/1CDewxPr1w" target="blank" className="facebook"><i className="bi bi-facebook"></i></Link>
+                        <Link to="https://www.instagram.com/swarnakarbapi/profilecard/?igsh=MmhxbDNzbjZyaDV3" target="blank" className="instagram"><i className="bi bi-instagram"></i></Link>
+                        <Link to="https://www.linkedin.com/in/bapi-swarnakar-814974231" target="blank" className="linkedin"><i className="bi bi-linkedin"></i></Link>
+                        <Link to="https://www.youtube.com/@bapi.swarnakar" target="blank" className="google-plus"><i className="bi bi-youtube"></i></Link>
                     </div>
                 </div>
 
