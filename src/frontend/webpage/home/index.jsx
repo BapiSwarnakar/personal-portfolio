@@ -31,7 +31,7 @@ const Home = () => {
                     I'm{' '}
                     <span className="typed" ref={typedElement}></span>
                     </p>
-                    <p>
+                    <p className="text-center mt-5">
                         <button className="contact-btn">Download CV</button>
                     </p>
                     <div className="social-links text-center d-lg-none">

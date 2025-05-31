@@ -1,3 +1,13 @@
+/* In your main stylesheet (e.g., App.css) */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+/* OR if using the npm package */
+@import '@fontsource/nunito';
+@import '@fontsource/nunito/400.css';       /* Regular */
+@import '@fontsource/nunito/600.css';       /* Semi-bold */
+@import '@fontsource/nunito/700.css';       /* Bold */
+@import '@fontsource/nunito/800.css';       /* Extra-bold */
+
 .App {
   text-align: center;
 }
@@ -38,7 +48,7 @@
 }
 
 .contact-btn {
-  background-color: var(--primary-color);
+  background-color: #3498db; /* Primary color */
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -49,7 +59,8 @@
 }
 
 .contact-btn:hover {
-  background-color: var(--secondary-color);
+  background-color: #2980b9; /* Darker shade on hover */
+  transform: translateY(-2px);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
