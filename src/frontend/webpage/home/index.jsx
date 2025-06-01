@@ -53,10 +53,10 @@ const Home = () => {
 
             </section>
 
-            <section id="about" className="about section">
+            <section id="about" className="about section" style={{backgroundColor: "#0d1224", color: "#fff", padding: "60px 0"}}>
 
                 <div className="container section-title" data-aos="fade-up">
-                    <h2>About</h2>
+                    <h2 style={{color : "#fff"}}>About</h2>
                     <p style={{textAlign: 'justify', fontSize: '1.1rem', lineHeight: '1.6rem', fontWeight: '450'}}>
                         I'm Bapi Swarnakar, a passionate software developer from Kaliyaganj, Uttar Dinajpur, West Bengal. 
                         I hold a Master's degree in Computer Science from Raiganj University and bring over 5 years of 
@@ -75,8 +75,8 @@ const Home = () => {
                             loading="lazy" />
                         </div>
                         <div className="col-lg-8 content">
-                            <h2>FullStack Developer</h2>
-                            <p className="py-3" style={{textAlign: 'justify', fontSize: '1.1rem', lineHeight: '1.6rem', fontWeight: '450'}}>
+                            <h2 style={{color : "#fff"}}>FullStack Developer</h2>
+                            <p className="py-3" style={{textAlign: 'left', fontSize: '1.1rem', lineHeight: '1.6rem', fontWeight: '450'}}>
                                 My technical expertise spans across both frontend and backend technologies, with specialization in 
                                 modern JavaScript frameworks and Java-based solutions. I thrive on building efficient, scalable 
                                 applications that deliver exceptional user experiences.
@@ -108,7 +108,7 @@ const Home = () => {
             </section>
 
 
-            <section id="technologies" className="technologies section dark-background">
+            <section id="technologies" className="technologies section dark-background" >
                 <div className="container section-title" data-aos="fade-up">
                     <h2>Technologies I Work With</h2>
                 </div>
@@ -256,7 +256,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section id="resume" className="resume section">
+            <section id="resume" className="resume section" style={{backgroundColor: "#0d1224", color: "#fff", padding: "60px 0"}}>
 
                 <div className="container section-title" data-aos="fade-up">
                     <h2>Resume</h2>
@@ -264,7 +264,7 @@ const Home = () => {
 
                 <div className="container">
 
-                    <div className="row" style={{textAlign: 'justify', fontSize: '1.1rem', lineHeight: '1.6rem', fontWeight: '450'}}>
+                    <div className="row" style={{textAlign: 'left', fontSize: '1.1rem', lineHeight: '1.6rem', fontWeight: '450'}}>
 
                         <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
 
@@ -298,7 +298,6 @@ const Home = () => {
                                     <li>Developed and maintained 10+ web applications including a doctor prescription system, e-commerce platform, and invoice generation tool</li>
                                     <li>Gained hands-on experience with full-stack development using PHP, JavaScript, and MySQL</li>
                                     <li>Built a prescription management system that reduced paperwork by 60% for clinic partners</li>
-                                    <li>Developed dynamic invoice generation application that automated billing for 50+ small business clients</li>
                                     <li>Contributed to all phases of SDLC from requirement analysis to deployment</li>
                                 </ul>
                             </div>
@@ -310,7 +309,6 @@ const Home = () => {
                                     <li>Designed and developed a highly scalable financial application using Spring Boot Microservices, improving system performance by 40%</li>
                                     <li>Implemented RESTful APIs for core banking operations, transaction processing, and reporting modules</li>
                                     <li>Integrated JWT-based authentication & authorization for secure access to financial data</li>
-                                    <li>Developed event-driven architecture using Spring Cloud Stream for real-time transaction updates</li>
                                     <li>Optimized database queries in MySQL/PostgreSQL, reducing query execution time by 35%</li>
                                 </ul>
                             </div>
