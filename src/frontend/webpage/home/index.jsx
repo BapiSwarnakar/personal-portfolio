@@ -18,6 +18,15 @@ const Home = () => {
         }
     }, []);
 
+    const downloadResume = () => {
+        const link = document.createElement('a');
+        link.href = '/assets/img/my_resume.pdf';
+        link.download = 'Bapi_Swarnakar_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
     return (
         <main className="main">
 
@@ -32,7 +41,7 @@ const Home = () => {
                     <span className="typed" ref={typedElement}></span>
                     </p>
                     <p className="text-center mt-5">
-                        <button className="contact-btn">Download CV</button>
+                        <button className="contact-btn" onClick={()=>downloadResume()}>Download CV</button>
                     </p>
                     <div className="social-links text-center d-lg-none">
                         <Link to="https://www.facebook.com/share/1CDewxPr1w" target="blank" className="facebook"><i className="bi bi-facebook"></i></Link>
@@ -48,7 +57,7 @@ const Home = () => {
 
                 <div className="container section-title" data-aos="fade-up">
                     <h2>About</h2>
-                    <p>
+                    <p style={{textAlign: 'justify', fontSize: '1.1rem', lineHeight: '1.6rem', fontWeight: '450'}}>
                         I'm Bapi Swarnakar, a passionate software developer from Kaliyaganj, Uttar Dinajpur, West Bengal. 
                         I hold a Master's degree in Computer Science from Raiganj University and bring over 5 years of 
                         hands-on experience in full-stack development.
@@ -59,7 +68,7 @@ const Home = () => {
 
                     <div className="row gy-4 justify-content-center">
                         <div className="col-lg-4">
-                            <img src="/assets/img/bapi.png" 
+                            <img src="/assets/img/6.jpg" 
                             className='img-fluid'
                             alt="Bapi Swarnakar - Full Stack Developer in West Bengal" 
                             title="Bapi Swarnakar Profile Photo"
@@ -67,7 +76,7 @@ const Home = () => {
                         </div>
                         <div className="col-lg-8 content">
                             <h2>FullStack Developer</h2>
-                            <p className="fst-italic py-3">
+                            <p className="py-3" style={{textAlign: 'justify', fontSize: '1.1rem', lineHeight: '1.6rem', fontWeight: '450'}}>
                                 My technical expertise spans across both frontend and backend technologies, with specialization in 
                                 modern JavaScript frameworks and Java-based solutions. I thrive on building efficient, scalable 
                                 applications that deliver exceptional user experiences.
@@ -76,7 +85,7 @@ const Home = () => {
                                 <div className="col-lg-6">
                                     <ul>
                                         <li><i className="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>02 Nov 1999</span></li>
-                                        <li><i className="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com</span></li>
+                                        <li><i className="bi bi-chevron-right"></i> <strong>Website:</strong> <span><a target='blank' href="https://stechworld.com">stechworld.com</a></span></li>
                                         <li><i className="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+916295283474</span></li>
                                         <li><i className="bi bi-chevron-right"></i> <strong>City:</strong> <span>Kaliyaganj, Uttar Dinajpur</span></li>
                                     </ul>
@@ -255,7 +264,7 @@ const Home = () => {
 
                 <div className="container">
 
-                    <div className="row">
+                    <div className="row" style={{textAlign: 'justify', fontSize: '1.1rem', lineHeight: '1.6rem', fontWeight: '450'}}>
 
                         <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
 
@@ -263,19 +272,19 @@ const Home = () => {
                             <div className="resume-item">
                                 <h4>Higher Secondary Education</h4>
                                 <h5>2015 - 2017</h5>
-                                <p><em>Debinagar K.C.R Vidyapith (H.S), Uttar Dinajpur, West Bengal</em></p>
+                                <p>Debinagar K.C.R Vidyapith (H.S), Uttar Dinajpur, West Bengal</p>
                             </div>
 
                             <div className="resume-item">
                                 <h4>Bachelor of Computer Application (BCA)</h4>
                                 <h5>2017 - 2020</h5>
-                                <p><em>Raiganj University, Uttar Dinajpur, West Bengal</em></p>
+                                <p>Raiganj University, Uttar Dinajpur, West Bengal</p>
                             </div>
 
                             <div className="resume-item">
                                 <h4>Master of Computer Science (M.Sc.)</h4>
                                 <h5>2020 - 2022</h5>
-                                <p><em>Raiganj University, Uttar Dinajpur, West Bengal</em></p>
+                                <p>Raiganj University, Uttar Dinajpur, West Bengal</p>
                             </div>
 
                         </div>
@@ -296,7 +305,7 @@ const Home = () => {
 
                             <div className="resume-item">
                                 <h4>Senior Associate</h4>
-                                <p><em>Mejora infotech</em></p>
+                                <h5>Mejora infotech</h5>
                                 <ul>
                                     <li>Designed and developed a highly scalable financial application using Spring Boot Microservices, improving system performance by 40%</li>
                                     <li>Implemented RESTful APIs for core banking operations, transaction processing, and reporting modules</li>
