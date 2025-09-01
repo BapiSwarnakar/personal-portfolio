@@ -20,8 +20,8 @@ const Home = () => {
 
     const downloadResume = () => {
         const link = document.createElement('a');
-        link.href = '/assets/img/my_resume.pdf';
-        link.download = 'Bapi_Swarnakar_Resume.pdf';
+        link.href = '/assets/img/bapi-swarnakar.pdf';
+        link.download = 'bapi-swarnakar.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -270,10 +270,11 @@ const Home = () => {
 
                             <h3 className="resume-title">Education</h3>
                             <div className="resume-item">
-                                <h4>Higher Secondary Education</h4>
-                                <h5>2015 - 2017</h5>
-                                <p>Debinagar K.C.R Vidyapith (H.S), Uttar Dinajpur, West Bengal</p>
+                                <h4>Master of Computer Science (M.Sc.)</h4>
+                                <h5>2020 - 2022</h5>
+                                <p>Raiganj University, Uttar Dinajpur, West Bengal</p>
                             </div>
+                            
 
                             <div className="resume-item">
                                 <h4>Bachelor of Computer Application (BCA)</h4>
@@ -282,9 +283,9 @@ const Home = () => {
                             </div>
 
                             <div className="resume-item">
-                                <h4>Master of Computer Science (M.Sc.)</h4>
-                                <h5>2020 - 2022</h5>
-                                <p>Raiganj University, Uttar Dinajpur, West Bengal</p>
+                                <h4>Higher Secondary Education</h4>
+                                <h5>2015 - 2017</h5>
+                                <p>Debinagar K.C.R Vidyapith (H.S), Uttar Dinajpur, West Bengal</p>
                             </div>
 
                         </div>
@@ -292,24 +293,27 @@ const Home = () => {
                         <div className="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                             <h3 className="resume-title">Professional Experience</h3>
                             <div className="resume-item">
-                                <h4>Associate</h4>
-                                <h5>Adosys</h5>
-                                <ul>
-                                    <li>Developed and maintained 10+ web applications including a doctor prescription system, e-commerce platform, and invoice generation tool</li>
-                                    <li>Gained hands-on experience with full-stack development using PHP, JavaScript, and MySQL</li>
-                                    <li>Built a prescription management system that reduced paperwork by 60% for clinic partners</li>
-                                    <li>Contributed to all phases of SDLC from requirement analysis to deployment</li>
-                                </ul>
-                            </div>
-
-                            <div className="resume-item">
-                                <h4>Senior Associate</h4>
+                                <h4>Senior Software Developer</h4>
                                 <h5>Mejora infotech</h5>
                                 <ul>
                                     <li>Designed and developed a highly scalable financial application using Spring Boot Microservices, improving system performance by 40%</li>
                                     <li>Implemented RESTful APIs for core banking operations, transaction processing, and reporting modules</li>
                                     <li>Integrated JWT-based authentication & authorization for secure access to financial data</li>
                                     <li>Optimized database queries in MySQL/PostgreSQL, reducing query execution time by 35%</li>
+                                </ul>
+                            </div>
+                            <div className="resume-item">
+                                <h4>Software Developer</h4>
+                                <h5>Accession Business Solutions Private Limited</h5>
+                                <ul>
+                                    <li>Developed and maintained 10+ web applications including a doctor prescription system, e-commerce platform, and invoice generation tool</li>
+                                </ul>
+                            </div>
+                            <div className="resume-item">
+                                <h4>Software Developer</h4>
+                                <h5>Webspidy Software Pvt Ltd</h5>
+                                <ul>
+                                    <li>Gained hands-on experience with full-stack development using PHP, JavaScript, and MySQL.</li>
                                 </ul>
                             </div>
 
