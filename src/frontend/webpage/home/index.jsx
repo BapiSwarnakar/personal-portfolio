@@ -1,10 +1,18 @@
 import { Link } from 'react-router-dom';
 import Typed from 'typed.js';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const Home = () => {
 
     const typedElement = useRef(null);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+    const [loading, setLoading] = useState(false);
+    const [messageStatus, setMessageStatus] = useState({ type: '', text: '' });
 
     useEffect(() => {
         if (typedElement.current) {
@@ -20,11 +28,70 @@ const Home = () => {
 
     const downloadResume = () => {
         const link = document.createElement('a');
-        link.href = '/assets/img/bapi-swarnakar.pdf';
+        link.href = '/assets/img/bapi-swarnakar-cv.pdf';
         link.download = 'bapi-swarnakar.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+    }
+
+    const handleInputChange = (e) => {
+        const { id, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [id]: value
+        }));
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        
+        // Validation
+        if (!formData.name || !formData.email || !formData.message) {
+            setMessageStatus({ 
+                type: 'error', 
+                text: 'Please fill in all required fields (Name, Email, and Message).' 
+            });
+            return;
+        }
+
+        setLoading(true);
+        setMessageStatus({ type: '', text: '' });
+
+        try {
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setMessageStatus({ 
+                    type: 'success', 
+                    text: 'Message sent successfully! I\'ll get back to you soon.' 
+                });
+                setFormData({ name: '', email: '', subject: '', message: '' });
+                // Reset form
+                e.target.reset();
+            } else {
+                setMessageStatus({ 
+                    type: 'error', 
+                    text: data.message || 'Failed to send message. Please try again.' 
+                });
+            }
+        } catch (error) {
+            console.error('Error sending message:', error);
+            setMessageStatus({ 
+                type: 'error', 
+                text: 'An error occurred. Please try again later.' 
+            });
+        } finally {
+            setLoading(false);
+        }
     }
 
     return (
@@ -47,7 +114,7 @@ const Home = () => {
                         <Link to="https://www.facebook.com/share/1CDewxPr1w" target="blank" className="facebook"><i className="bi bi-facebook"></i></Link>
                         <Link to="https://www.instagram.com/swarnakarbapi/profilecard/?igsh=MmhxbDNzbjZyaDV3" target="blank" className="instagram"><i className="bi bi-instagram"></i></Link>
                         <Link to="https://www.linkedin.com/in/bapi-swarnakar-814974231" target="blank" className="linkedin"><i className="bi bi-linkedin"></i></Link>
-                        <Link to="https://www.youtube.com/@bapi.swarnakar" target="blank" className="google-plus"><i className="bi bi-youtube"></i></Link>
+                        <Link to="https://youtube.com/@stechworld2" target="blank" className="google-plus"><i className="bi bi-youtube"></i></Link>
                     </div>
                 </div>
 
@@ -58,9 +125,7 @@ const Home = () => {
                 <div className="container section-title" data-aos="fade-up">
                     <h2 style={{color : "#fff"}}>About</h2>
                     <p style={{textAlign: 'justify', fontSize: '1.1rem', lineHeight: '1.6rem', fontWeight: '450'}}>
-                        I'm Bapi Swarnakar, a passionate software developer from Kaliyaganj, Uttar Dinajpur, West Bengal. 
-                        I hold a Master's degree in Computer Science from Raiganj University and bring over 5 years of 
-                        hands-on experience in full-stack development.
+                       I am a passionate Full-Stack Software Developer from West Bengal, India, with a Master’s degree in Computer Science from Raiganj University and over 4 years of industry experience. I enjoy building scalable, real-world applications and continuously improving my skills by exploring new technologies and best practices.
                     </p>
                 </div>
 
@@ -86,13 +151,8 @@ const Home = () => {
                                     <ul>
                                         <li><i className="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>02 Nov 1999</span></li>
                                         <li><i className="bi bi-chevron-right"></i> <strong>Website:</strong> <span><a target='blank' href="https://stechworld.com">stechworld.com</a></span></li>
-                                        <li><i className="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+916295283474</span></li>
                                         <li><i className="bi bi-chevron-right"></i> <strong>City:</strong> <span>Kaliyaganj, Uttar Dinajpur</span></li>
-                                    </ul>
-                                </div>
-                                <div className="col-lg-6">
-                                    <ul>
-                                        <li><i className="bi bi-chevron-right"></i> <strong>Age:</strong> <span>25</span></li>
+                                        <li><i className="bi bi-chevron-right"></i> <strong>Age:</strong> <span>26</span></li>
                                         <li><i className="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master in Computer Science</span></li>
                                         <li><i className="bi bi-chevron-right"></i> <strong>Email:</strong> <span>swarnakarr34@gmail.com</span></li>
                                         <li><i className="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
@@ -304,13 +364,6 @@ const Home = () => {
                             </div>
                             <div className="resume-item">
                                 <h4>Software Developer</h4>
-                                <h5>Accession Business Solutions Private Limited</h5>
-                                <ul>
-                                    <li>Developed and maintained 10+ web applications including a doctor prescription system, e-commerce platform, and invoice generation tool</li>
-                                </ul>
-                            </div>
-                            <div className="resume-item">
-                                <h4>Software Developer</h4>
                                 <h5>Webspidy Software Pvt Ltd</h5>
                                 <ul>
                                     <li>Gained hands-on experience with full-stack development using PHP, JavaScript, and MySQL.</li>
@@ -403,27 +456,63 @@ const Home = () => {
                     </div>
 
                     <div className="contact-form" data-aos="fade-up" data-aos-delay="400">
-                        <form>
+                        <form onSubmit={handleSubmit}>
+                        {messageStatus.text && (
+                            <div className={`alert alert-${messageStatus.type === 'success' ? 'success' : 'danger'} mb-3`} role="alert">
+                                {messageStatus.text}
+                            </div>
+                        )}
                         <div className="form-row">
                             <div className="form-group">
-                            <input type="text" id="name" placeholder=" " required />
+                            <input 
+                                type="text" 
+                                id="name" 
+                                placeholder=" " 
+                                required 
+                                value={formData.name}
+                                onChange={handleInputChange}
+                                disabled={loading}
+                            />
                             <label htmlFor="name">Your Name</label>
                             </div>
                             <div className="form-group">
-                            <input type="email" id="email" placeholder=" " required />
+                            <input 
+                                type="email" 
+                                id="email" 
+                                placeholder=" " 
+                                required 
+                                value={formData.email}
+                                onChange={handleInputChange}
+                                disabled={loading}
+                            />
                             <label htmlFor="email">Your Email</label>
                             </div>
                         </div>
                         <div className="form-group">
-                            <input type="text" id="subject" placeholder=" " />
+                            <input 
+                                type="text" 
+                                id="subject" 
+                                placeholder=" "
+                                value={formData.subject}
+                                onChange={handleInputChange}
+                                disabled={loading}
+                            />
                             <label htmlFor="subject">Subject</label>
                         </div>
                         <div className="form-group">
-                            <textarea id="message" rows="5" placeholder=" " required></textarea>
+                            <textarea 
+                                id="message" 
+                                rows="5" 
+                                placeholder=" " 
+                                required
+                                value={formData.message}
+                                onChange={handleInputChange}
+                                disabled={loading}
+                            ></textarea>
                             <label htmlFor="message">Your Message</label>
                         </div>
-                        <button type="submit" className="submit-btn">
-                            <span>Send Message</span>
+                        <button type="submit" className="submit-btn" disabled={loading}>
+                            <span>{loading ? 'Sending...' : 'Send Message'}</span>
                             <i className="bi bi-send-fill"></i>
                         </button>
                         </form>

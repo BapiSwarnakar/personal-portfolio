@@ -33,7 +33,7 @@ const FrontendHeader = () => {
           <Link to="https://www.facebook.com/share/1CDewxPr1w" target="blank" className="facebook"><i className="bi bi-facebook"></i></Link>
           <Link to="https://www.instagram.com/swarnakarbapi/profilecard/?igsh=MmhxbDNzbjZyaDV3" target="blank" className="instagram"><i className="bi bi-instagram"></i></Link>
           <Link to="https://www.linkedin.com/in/bapi-swarnakar-814974231" target="blank" className="linkedin"><i className="bi bi-linkedin"></i></Link>
-          <Link to="https://www.youtube.com/@bapi.swarnakar" target="blank" className="google-plus"><i className="bi bi-youtube"></i></Link>
+          <Link to="https://youtube.com/@stechworld2" target="blank" className="google-plus"><i className="bi bi-youtube"></i></Link>
         </div>
 
         <nav id="navmenu" className="navmenu">
